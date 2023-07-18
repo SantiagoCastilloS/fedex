@@ -1,0 +1,26 @@
+<div class="container-full p-4" style="background-image: url('https://ichef.bbci.co.uk/news/640/cpsprodpb/42C6/production/_102149071_cyan-blue-976x549.jpg')">
+  <h1 class="text-center font-semibold text-3xl text-white">Catálogo de tienda</h1>
+</div>
+
+
+<div class="container-full p-4">
+  <div class="grid grid-cols-4">
+    <article *ngFor="let item of listaProductos, let indice = index" class="p-4">
+      <a [routerLink]="['/detalleproducto/', indice]">
+        <button class="hover:scale-105 ease-in-out duration-300">
+          <article>
+            <div class="flex flex-row-reverse">
+              <span class="bg-red-500 text-white font-semibold rounded-md w-20 text-center">¡Nuevo!</span>
+            </div>
+            <div class="grid justify-items-center">
+              <img [src]="item.imagen.urlImg" class="h-auto margen">
+            </div>
+            <div class="text-center text-gray-500 font-semibold">{{item.marca.nombreM}}</div>
+            <div class="text-center font-semibold">{{item.nombreP}}</div>
+            <div class="text-center text-red-600 font-semibold">S/{{item.precio}}</div>
+          </article>
+        </button>
+      </a>
+    </article>
+  </div>
+</div>
